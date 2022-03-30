@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: java-app
+  labels:
+    app: java-sample-app
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: java-sample-app
+  template:
+    metadata:
+      labels:
+        app: java-sample-app
+    spec:
+      containers:
+        - name: java-app
+          image: bvinodkumar2008/java-docker:latest
+          
